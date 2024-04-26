@@ -16,7 +16,7 @@ import json
 previous_output = ""
 
 # API Keys
-abuseipdb_api_key = 'ENTER API KEY HERE'
+abuseipdb_api_key = ''
 
 # API Headers and URLs
 # AbuseIPDB
@@ -197,6 +197,7 @@ def URI_submenu():
         elif choice == "4":
             copy_output(output)
         elif choice == "5":
+            os.system('clear')
             break
 
 # Hash Submenu Function
@@ -282,7 +283,7 @@ def text_manipulation_submenu():
             copy_output(previous_output)
         elif choice == "9":
             os.system('clear')
-            
+
 # IP Submenu Function
 def ip_submenu():
     global text, previous_output
@@ -315,6 +316,7 @@ def ip_submenu():
                     output += formatted_result + '\n'
                 print(abuse_output)
         elif choice == "3":
+            os.system('clear')
             break
         elif choice == "4":
             copy_output(previous_output)
@@ -348,13 +350,16 @@ def get_input():
                 try:
                     line = input()
                 except EOFError:
+                    os.system('clear')
                     break
 
                 if line.strip().upper() == "DONE!":
+                    os.system('clear')
                     break
                 lines.append(line)
             
             text = '\n'.join(lines)
+            os.system('clear')
             break
         elif choice.upper() == 'F':
             file_path = input("Enter the file path: ")

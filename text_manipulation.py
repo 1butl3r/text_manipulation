@@ -16,7 +16,7 @@ import json
 previous_output = ""
 
 # API Keys
-abuseipdb_api_key = ''
+abuseipdb_api_key = 'INPUT API KEY'
 
 # API Headers and URLs
 # AbuseIPDB
@@ -136,7 +136,8 @@ def menu_operations():
             hash_submenu()
 
         elif choice == "2":
-            output = ip_submenu()
+            os.system('clear')
+            ip_submenu()
 
         elif choice == "3":
             os.system('clear')
@@ -154,6 +155,7 @@ def menu_operations():
             os.system('clear')
 
         elif choice == "10":
+            os.system('clear')
             get_input()
 
         elif choice == "11":
@@ -176,6 +178,7 @@ def URI_submenu():
         print("3) Clear Terminal")
         print("4) Copy Previous Output to Clipboard")
         print("5) Return to Main Menu")
+        print("10) Input Data")
         print('\n' +'\n' + '\n')
         choice = input("Enter your choice: ")
 
@@ -199,6 +202,8 @@ def URI_submenu():
         elif choice == "5":
             os.system('clear')
             break
+        elif choice =="10":
+            get_input()
 
 # Hash Submenu Function
 def hash_submenu():
@@ -210,6 +215,7 @@ def hash_submenu():
         print("3) Find MD5")
         print("4) Store Previous Output to Clipboard")
         print("5) Back to Main Menu")
+        print("10) Input Data")
         print('\n' +'\n' + '\n')
         choice = input("Enter your choice: ")
 
@@ -227,6 +233,8 @@ def hash_submenu():
         elif choice == "5":
             os.system('clear')  # Clear terminal
             break
+        elif choice == "10":
+            get_input()
         else:
             print("Invalid option, please try again.")
 
@@ -239,6 +247,7 @@ def file_finder_submenu():
         print("2) Return to Main Menu")
         print("3) Store Previous Output to Clipboard")
         print("9) Clear Terminal")
+        print("10) Input Data")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -254,6 +263,8 @@ def file_finder_submenu():
         elif choice == "2":
             os.system('clear')
             break
+        elif choice == "10":
+            get_input()
 
 # Text Manipulation Submenu Function
 def text_manipulation_submenu():
@@ -265,6 +276,7 @@ def text_manipulation_submenu():
         print("3) Return to Main Menu")
         print("4) Store Previous Output to Clipboard")
         print("9) Clear Terminal")
+        print("10) Input Data")
         choice = input("Enter your choice: ")
         if choice == "1":
             output = newline_to_space(text)
@@ -283,6 +295,8 @@ def text_manipulation_submenu():
             copy_output(previous_output)
         elif choice == "9":
             os.system('clear')
+        elif choice == "10":
+            get_input()
 
 # IP Submenu Function
 def ip_submenu():
@@ -294,6 +308,7 @@ def ip_submenu():
         print("3) Return to Main Menu")
         print("4) Store Previous Output to Clipboard")
         print("9) Clear Terminal")
+        print("10) Input Data")
         choice = input("Enter your choice: ")
         output = ""
         if choice == "1":
@@ -322,6 +337,8 @@ def ip_submenu():
             copy_output(previous_output)
         elif choice == "9":
             os.system("clear")
+        elif choice == "10":
+            get_input()
 
 # Output operations        
 def print_output(output):
